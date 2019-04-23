@@ -14,11 +14,15 @@ class PostTest extends TestCase {
      *
      * @return void
      */
+
     public function testExample() {
         $response = $this->get('/');
 
         $response->assertStatus(200);
     }
+
+
+
 
     /** @test */
     public function aUserCanReadAllThePosts() {
@@ -30,7 +34,10 @@ class PostTest extends TestCase {
 
         //Then we should be able to see all the posts
         $response->assertSee($post->title);
+
+
     }
+
 
     /** @test */
     public function aUserCanSeeASinglePost() {
@@ -171,4 +178,6 @@ class PostTest extends TestCase {
                         ->assertRedirect('/posts');
 
     }
+
+
 }
